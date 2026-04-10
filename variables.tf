@@ -23,12 +23,12 @@ variable "project" {
 }
 
 variable "environment" {
-  description = "Deployment environment identifier (dev, qa, pdn)."
+  description = "Deployment environment identifier (dev, qa, pdn, prod)."
   type        = string
 
   validation {
-    condition     = contains(["dev", "qa", "pdn"], var.environment)
-    error_message = "The 'environment' variable must be one of: dev, qa, pdn."
+    condition     = contains(["dev", "qa", "pdn", "prod"], var.environment)
+    error_message = "The 'environment' variable must be one of: dev, qa, pdn, prod."
   }
 }
 
